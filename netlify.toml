@@ -1,0 +1,16 @@
+# Netlify build settings
+[build]
+  # Directory to publish (Vite build output)
+  publish = "dist"
+  # Build command
+  command = "npm run build"
+
+# Redirects for SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Environment variables example (set these in Netlify dashboard)
+[build.environment]
+  VITE_API_URL = "https://your-backend-url.com"

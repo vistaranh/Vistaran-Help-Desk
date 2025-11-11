@@ -1,0 +1,11 @@
+# Replit configuration file
+language = "nodejs"
+run = "npm run start:prod"
+
+# Specify the port
+[ports]
+  web = 5000
+
+# Environment variables
+[env]
+  PORT = "5000"

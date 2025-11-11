@@ -1,0 +1,41 @@
+{
+  "name": "vistaran-help-desk",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+  "start": "node server/production-server.js",
+    "start:realtime": "node server/realtime-server.js",
+    "start:prod": "node server/production-server.js",
+    "start:all": "node server/start-all.js",
+    "start:pm2": "pm2 start ecosystem.config.js --env production",
+    "docker:build": "docker build -t vistaran-help-desk .",
+    "docker:run": "docker run --rm -p 5000:5000 --env-file .env vistaran-help-desk",
+    "test:ai": "node test-ai.js",
+    "setup:env": "node setup-env.js",
+    "migrate": "node --loader ts-node/esm sql/migrate-data.js"
+  },
+  "dependencies": {
+    "@emailjs/browser": "4",
+    "@google/genai": "^1.21.0",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.0",
+    "helmet": "^6.0.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express-rate-limit": "^6.7.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0",
+    "pm2": "^5.3.0"
+  }
+}
